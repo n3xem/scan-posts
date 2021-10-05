@@ -16,4 +16,13 @@ def parse(text):
     return parse_texts
 
 
-ic(parse("卒業研究を頑張ります"))
+def is_noun(parse_text):
+    return parse_text[1] == '名詞'
+
+
+def extract_noun(parse_texts):
+    return list(filter(is_noun, parse_texts))
+
+
+parse_texts = parse("卒業研究を頑張ります")
+ic(extract_noun(parse_texts))
